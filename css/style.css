@@ -1,0 +1,457 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;300&display=swap');
+@font-face {
+  font-family: Cyber;
+  src: url("https://assets.codepen.io/605876/Blender-Pro-Bold.otf");
+  font-display: swap;
+}
+
+:root{
+  --glass-bg:rgba(11, 210, 228, 0.15);
+  --glass-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
+  --glass-text-color:#a1ecfb;
+  --glass-filter:blur(10px);
+  
+  --glass-btn-color: rgba(255, 255, 255, 0.1);
+  --glass-btn-shadow:0 5px 5px rgba(0,0, 0,.2);
+  --glass-btn-trans:all 0.2s ease-in;
+  
+  --hover-bg:  #BC4D1D;
+  --hover-shadow: 0 0 5px #AA3815 , 0 0 30px #AA3815, 0 0 40px  #AA3815;
+  --hover-trans:0.1s;
+
+/**You can change color, font-size, text-aligin within <main>*/
+  --heading-color:#a1ecfb; ;
+  --heading-font-size:40px;
+  --font:'Cyber', sans-serif;
+  --align:center;
+  --padding: 5px 30px;
+
+/**Color on welcome screen*/
+--default:linear-gradient(to right bottom, #000428, #031a40, #062a5a, #073b75, #004e92);
+--superman:linear-gradient(to right, #0099f7, #937bef, #dc4bc1, #fe0073, #f11712);
+--deepspace:linear-gradient(to left bottom, #000000, #161616, #242424, #333333, #434343);
+--pacificDream:linear-gradient(to left bottom, #34e89e, #00baa0, #008b90, #005e6f, #0f3443);
+--loveAndLiberty: linear-gradient(to left bottom, #200122, #360025, #4e0022, #610017, #6f0000);
+}
+html body{
+  scroll-behavior: smooth;
+  font-family: var(--font);
+ 
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+
+
+li{
+  list-style: none;
+}
+
+/*===Navigation bar===*/
+.top_nav {
+  max-width: 100%;
+  color:var(--glass-text-color);
+  background: var(--glass-bg);
+  box-shadow:var(--glass-shadow);
+  backdrop-filter:var(--glass-filter);
+  display: flex;
+  border-left:1px solid #029dbb;
+  border-right: 1px solid #029dbb;
+  border-bottom: 3px solid #029dbb;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+
+
+
+.top_nav a{
+  text-decoration: none;
+  letter-spacing: 5px;
+  font-weight:bold;
+  font-size:16pt;
+  padding: 16px 9px;
+  font-family:var(--font);
+  position: relative;
+
+}
+
+#brand{
+    padding: 16px 9px;
+    font-size: 16pt;
+    cursor: default;
+    background:#0070f7;
+    border:3px solid solid #029dbb;
+    border-bottom-left-radius:30px;
+    border-top-right-radius:50%;
+  }
+
+/*===Mobile-menu bar & bar animation===*/
+.container {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 3px;
+  background-color:#029dbb;
+  
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+
+.nav-link{
+  color:var(--heading-color) !important;
+}
+
+
+.nav-link::after{
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background:var(--pacificDream);
+  transition: width .3s;
+}
+
+.nav-link:hover::after{
+  width: 100%;
+  transition: width .3s;
+}
+
+.my_dropdown a{
+  color:#fff;
+}
+/*===Main container===*/
+.main-container{
+  display: flex;
+  flex-direction: column;
+  /*background-image: url('https://bit.ly/3oLbSWq');*/
+  background-color: #000;
+  background-repeat:no-repeat;
+  background-size: contain;
+  background-position: center;
+/*background:#021114;*/
+  background-size: cover;
+  width: 100%;
+}
+  /*===Typewriting effect===*/
+.intro{
+  /*background-image: linear-gradient(to right bottom, #000428, #031a40, #062a5a, #073b75, #004e92);*/  
+  /*background-image:url('https://bit.ly/36Zkwup');*/
+  background-image:url('https://bit.ly/37ZUUg3');
+  background-size: cover;
+  width: 100%;
+  min-height:600px;
+  color: #a1ecfb;
+  font-family:var(--font);
+  display: flex;
+  align-items: center;
+  padding-left: 10%;
+  border-bottom:5px solid #029dbb;
+ 
+  
+}
+
+.startWord{
+  background-color: rgba(255, 0, 0, 0.719);
+  padding: 5px;
+  position: relative;
+  
+}
+
+.typing{
+  color: var(--heading-color);
+  position: relative;
+  
+}
+
+.typing::after{
+  content: "";
+  position: relative;;
+  right: -5px;
+  top: 4px;
+  width: 1px;
+  height: 40px;
+  border-right: 2px solid #fff;
+  animation: blink 1.1s infinite ease;
+ 
+}
+
+@keyframes blink{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+
+
+
+
+
+/*==ABOUT==*/
+
+/*!important
+Is there a way to use the URL anchor (the #fragment part) to have the browser scroll to a certain point in the page, but still respect the height of the fixed element without the help of JavaScript?
+WRONG (but the common behavior):         CORRECT:
++---------------------------------+      +---------------------------------+
+| BAR///////////////////// header |      | //////////////////////// header |
++---------------------------------+      +---------------------------------+
+| Here is the rest of the Text    |      | BAR                             |
+| ...                             |      |                                 |
+| ...                             |      | Here is the rest of the Text    |
+| ...                             |      | ...                             |
++---------------------------------+      +---------------------------------+*/
+
+/*===SKIll===*/
+.about,.skill, .work, .contact, .more{
+  width:80%;
+  background:var(--glass-bg);
+  backdrop-filter: blur(10px);
+  text-align: center;
+  border-top: 1px solid #029dbb;
+  border-bottom: 0.5px solid #029dbb;
+  margin-top: 30px;
+  margin-left: 10%;
+  box-shadow:var(--glass-shadow);
+  margin-bottom: 30px;
+}
+
+.about h1,.skill h1, .work h1, .contact h1, .more h1{
+  color: #a1ecfb;
+
+}
+
+.about p, .work p, .contact p, .more p{
+  padding: 10px 10px;
+  color:#029dbb;
+  font-size: 30px;
+}
+.skills{
+ padding-bottom: 100px;
+}
+.bar{
+  margin: 20px 0;
+  color:#029dbb;
+  font-size: 30px;
+}
+
+.skill-name{
+  margin:25px 0;
+}
+.frame{
+  
+  background: var(--glass-bg);
+  backdrop-filter: blur(8px);
+  border:1px solid #029dbb;
+  text-align: center;
+  line-height: 40px;
+  width: 80%;
+  margin: 0 10%;
+  
+
+}
+
+.percentage-1,.percentage-2,.percentage-3{
+  height: 100%;
+  background: #a1ecfb;
+  width: 0%;
+  position: relative;
+  text-align: right;
+}
+
+/*===WORK===*/
+.work-container {
+  position: relative;
+  max-width: 75%; /* Maximum width */
+  margin: 30px auto; /* Center it*/
+}
+.work-container .content { /* Position the background text */
+  bottom: 0; /* At the bottom. Use top:0 to append it to the top */
+  /* Fallback color */
+  background: var(--glass-bg); /* Black background with 0.5 opacity */
+  backdrop-filter: blur(8px);
+  color: #a1ecfb;
+  width: 100%; /* Full width */
+  padding: 20px; /* Some padding */
+  font-size: xx-large;
+  text-decoration: none;
+  border: 1px solid #029dbb;
+}
+
+.content a{
+  color: #a1ecfb;
+  font-family: var(--font);
+}
+
+.work-img{
+  position: relative;
+  overflow: hidden;
+  border:1px solid #029dbb; 
+}
+.work-img img{
+  transition: 1s;
+  cursor: pointer;
+  
+}
+.work-img img:hover{
+  transform: scale(1.1);
+  overflow: hidden;
+
+}
+
+/*Contact me*/
+.contact-container{
+  border-radius: 5px;
+  background-color:none;
+  padding: 20px;
+  color:#a1ecfb;
+  font-size: 30px;
+  text-align: left;
+}
+
+input,textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+  font-size: 20px;
+  background: var(--glass-bg);
+  border: 1px solid #029dbb;
+  color:#a1ecfb;
+}
+
+input[type=submit] {
+  background: #000;
+  color:#21ebff;
+  padding: 12px 20px;
+  border: 1px solid #029dbb;
+  border-radius: 4px;
+  cursor: pointer;
+  float:right;
+  margin-bottom: 12px;
+  font-size:20px;
+  transition: 0.5s;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+}
+.send:hover{
+  background:#21ebff ;
+  color: #111;
+  box-shadow: 0 0 50px #21ebff;
+}
+
+.send:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #21ebff;
+  border-left: 2px solid #21ebff;
+  transition: 0.5s;
+
+}
+
+.send:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  border-bottom: 2px solid #21ebff;
+  border-right: 2px solid #21ebff;
+  transition: 0.5s;
+ 
+}
+
+
+
+
+/*Footer*/
+footer{
+  background: #000;
+}
+.footer{
+  border-top: 5px solid #029dbb;
+  min-width: 100%;
+  height: 100px;
+  background: var(--glass-bg);
+  color: #a1ecfb;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 40px;
+}
+.anchor { padding-top: 80px; }
+
+/*===Responsive section===*/
+@media screen and (max-width:800px){
+  .work{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .work-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 80%;
+  
+  }
+}
+@media screen and (max-width:400px){
+.intro{
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 0;
+}
+
+.startWord{
+    padding: 20px;
+    width: 80%;
+    text-align: center;
+  }
+
+.work{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.work-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 80%;
+
+}
+}
+
